@@ -1,0 +1,33 @@
+body {
+    color: #000000;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    background-color: #27AE60;
+    color: white;
+    padding: 20px;
+}
+
+header a:hover {
+    color: white;
+    text-decoration: none;
+}
+#Prochain-match {
+    border-right: red 4px solid;
+    color: rgb(2, 2, 2);
+    padding: 15px;
+    box-shadow: gray 4px;
+}
+#reservation-btn {
+    background-color: rgb(17, 255, 0);
+    color: white;
+}
+#reservation-btn:hover {
+    background-color: rgb(5, 73, 12);
+}
+footer{
+    text-align: center;
+    color : black;
+}
