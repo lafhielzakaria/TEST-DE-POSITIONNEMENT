@@ -47,9 +47,10 @@ let reservedMatches = 0;
 let ProchainMatchSection = document.getElementById("ProchainMatch");
 
 function renderMatchs(list) {
-    ProchainMatchSection.innerHTML = list.map(match =>
-        `<p>${match.equipe1} Vs ${match.equipe2}</p><p>${match.date}</p><p>${match.stade}</p><button onclick="reserver(${match.id})">reserver</button>`
-    ).join('');
+    ProchainMatchSection.innerHTML = "";
+    list.forEachJJ(match => {
+        ProchainMatchSection.innerHTML += `<p>${match.equipe1} Vs ${match.equipe2}</p><p>${match.date}</p><p>${match.stade}</p><button onclick="reserver(${match.id})">reserver</button>`
+    });
 }
 
 window.onload = function () { renderMatchs(matchs); }
@@ -61,7 +62,7 @@ function reserver(id) {
 }
 
 document.getElementById("sortBtn").addEventListener('click', () => {
-    const sorted = [...matchs].sort((a, b) => a.prix.tribune > b.prix.tribune ? 1 : -1);
+    const sorted = matchs.sort((a, b) => a.prix.tribune > b.prix.tribune ? 1 : -1);
     renderMatchs(sorted);
 });
 
